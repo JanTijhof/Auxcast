@@ -1,0 +1,11 @@
+#! /bin/sh
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+echo "=> Copying config files...\n"
+sudo cp darkice.cfg /etc/
+sudo cp icecast.xml /etc/icecast2/
+
+echo "Config files copied.\n"
