@@ -7,12 +7,20 @@ cd "$(dirname "$0")/.."
 echo "=> Installing Auxcast...\n"
 sudo cp listen-for-shutdown.py /usr/local/bin/
 sudo chmod +x /usr/local/bin/listen-for-shutdown.py
+sudo cp listen-for-cast.py /usr/local/bin/
+sudo chmod +x /usr/local/bin/listen-for-cast.py
 
-echo "=> Starting shutdown listener...\n"
+echo "=> Starting Auxcast listeners...\n"
 sudo cp listen-for-shutdown.sh /etc/init.d/
 sudo chmod +x /etc/init.d/listen-for-shutdown.sh
 
 sudo update-rc.d listen-for-shutdown.sh defaults
 sudo /etc/init.d/listen-for-shutdown.sh start
 
-echo "Shutdown listener installed.\n"
+sudo cp listen-for-cast.sh /etc/init.d/
+sudo chmod +x /etc/init.d/listen-for-cast.sh
+
+sudo update-rc.d listen-for-cast.sh defaults
+sudo /etc/init.d/listen-for-cast.sh start
+
+echo "Auxcast installed.\n"
