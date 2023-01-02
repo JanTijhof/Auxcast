@@ -18,6 +18,9 @@ Based on [this tutorial](https://dupontgu.medium.com/how-to-stream-your-record-p
 <h2>Instructions:</h2>
 
 + Start with setting up a Raspberry pi with Linux distro and network connection.
+
++ Wire up two momentary NO buttons. One from GPIO3 to GND (shutdown) and the other from GPIO4 to GND (cast button)
+
 + Install Darkice and Icecast2, you might want to use these [instructions](https://maker.pro/raspberry-pi/projects/how-to-build-an-internet-radio-station-with-raspberry-pi-darkice-and-icecast).
 + Settings for both are included in this repo.
 
@@ -30,5 +33,10 @@ replace "Muziek" with the Google casting device/group you're targeting and the I
 go-chromecast -n 'Muziek' load 'http://192.168.1.169:8000/turntable.mp3'
 ```` 
 
-script listen-for cast.sh should be located at /etc/init.d/listen-for-cast.sh
-script listen-for shutdown.sh should be located at /etc/init.d/listen-for-shutdown.sh
++ When casting is working, install the script for the buttons by running the following SSH command:
+````
+git clone https://github.com/JanTijhof/Auxcast/
+
+./Auxcast/scripts/install
+````
++ That should be it! Enjoy your Music! 🎶
