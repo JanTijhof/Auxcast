@@ -12,17 +12,17 @@
 
 # to by the system
 case "$1" in
-        start)
-                echo "Starting listen-for-cast.py"
-                /etc/auxcast/play-stream.py &
-                ;;
-        stop)
-                echo "Stopping listen-for-cast.py" pkill -f
-                /etc/auxcast/play-stream.py
-                ;;
-        *)
-                echo "Usage: /etc/init.d/listen-for-cast.sh {start|stop}" exit 1
-                ;;
+	start)
+		echo "Starting listen-for-cast.py"
+		/etc/auxcast/play-stream.py &
+		;;
+	stop)
+		echo "Stopping listen-for-cast.py" pkill -f
+		/etc/auxcast/play-stream.py
+		;;
+	*)
+		echo "Usage: /etc/init.d/listen-for-cast.sh {start|stop}" exit 1
+		;;
 esac
 
 exit 0
