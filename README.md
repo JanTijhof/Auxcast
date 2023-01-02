@@ -22,7 +22,12 @@ Based on [this tutorial](https://dupontgu.medium.com/how-to-stream-your-record-p
 + Wire up two momentary NO buttons. One from GPIO3 to GND (shutdown) and the other from GPIO4 to GND (cast button)
 
 + Install Darkice and Icecast2, you might want to use these [instructions](https://maker.pro/raspberry-pi/projects/how-to-build-an-internet-radio-station-with-raspberry-pi-darkice-and-icecast).
-+ Settings for both are included in this repo.
++ Settings for both are included in this repo and can be cloned with:
+````
+git clone https://github.com/JanTijhof/Auxcast/
+
+./Auxcast/scripts/copy-settings
+````
 
 + Install Go ([instructions](https://linuxhint.com/2-methods-install-go-raspberry-pi/))
 + Now instal Go-chromecast
