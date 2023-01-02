@@ -17,7 +17,9 @@ def setup():
 def loop():
 	while True:
 		if GPIO.event_detected(4):
-				print('Auxcast - Casting Button Pressed')
+			print('Auxcast - Casting Button Pressed')
+			time.sleep(0.5)
+			if (GPIO.input(4) == False) :
 				# Discover and connect to chromecasts named Muziek
 				chromecasts, browser = pychromecast.get_listed_chromecasts(friendly_names=['Muziek'])
 				[cc.device.friendly_name for cc in chromecasts]
