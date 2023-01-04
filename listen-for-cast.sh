@@ -14,11 +14,11 @@
 case "$1" in
 	start)
 		echo "Starting listen-for-cast.py"
-		/etc/auxcast/listen-for-cast.py &
+		/usr/local/bin/listen-for-cast.py &
 		;;
 	stop)
 		echo "Stopping listen-for-cast.py" pkill -f
-		/etc/auxcast/listen-for-cast.py
+		/usr/local/bin/listen-for-cast.py
 		;;
 	*)
 		echo "Usage: /etc/init.d/listen-for-cast.sh {start|stop}" exit 1
