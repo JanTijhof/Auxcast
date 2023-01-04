@@ -28,25 +28,30 @@ sudo apt-get update
 sudo apt-get upgrade
 ````
 
-Install this Darkice package with built in mp3 support.
+No need for custom built packages as most tutorials instruct. Darkice 1.3 and higher have mp3 support built in.
+Install Darkice and Icecast 2
 ````
-Wget https://github.com/x20mar/darkice-with-mp3-for-raspberry-pi/blob/master/darkice_1.0.1-999~mp3+1_armhf.deb?raw=true
-mv darkice_1.0.1-999~mp3+1_armhf.deb?raw=true darkice_1.0.1-999~mp3+1_armhf.deb
-sudo apt-get install libmp3lame0 libtwolame0
-sudo dpkg -i darkice_1.0.1-999~mp3+1_armhf.deb
-````
-
-Then get Icecast
-````
-sudo apt-get install icecast2
+sudo apt-get install icecast2 darkice
 ````
 For now we can skip the Icecast configuration, as we will copy those settings in. If you'd rather configure everything yourself, it's possible to use [these](https://maker.pro/raspberry-pi/projects/how-to-build-an-internet-radio-station-with-raspberry-pi-darkice-and-icecast), or [these](https://circuitdigest.com/microcontroller-projects/raspberry-pi-internet-radio-and-streaming-station) instructions.
 Both Darkice and Icecast configurations are included in this repo and can be cloned with:
 ````
-git clone https://github.com/JanTijhof/Auxcast/
-
-./Auxcast/scripts/copy-settings
+git clone https://github.com/JanTijhof/Auxcast
+sudo cp /Auxcast/darkice.cfg /etc/darkice.cfg
+sudo cp /Auxcast/icecast.xml /etc/icecast2/icecast.xml
 ````
+
+Add both to the startup script of your raspberry by opening rc.local
+````
+sudo nano /etc/rc.local
+````
+Add these lines
+````
+sudo nano icecast2&
+sleep 5
+sudo nano darkice -c /etc/darkice.cfg&
+````
+
 Now to finish our installing process, reboot the system. 
 ````
 sudo reboot
