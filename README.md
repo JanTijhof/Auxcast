@@ -37,8 +37,8 @@ For now we can skip the Icecast configuration, as we will copy those settings in
 Both Darkice and Icecast configurations are included in this repo and can be cloned with:
 ````
 git clone https://github.com/JanTijhof/Auxcast
-sudo cp /Auxcast/darkice.cfg /etc/darkice.cfg
-sudo cp /Auxcast/icecast.xml /etc/icecast2/icecast.xml
+sudo cp Auxcast/darkice.cfg /etc/darkice.cfg
+sudo cp Auxcast/icecast.xml /etc/icecast2/icecast.xml
 ````
 
 Add both to the startup script of your raspberry by opening rc.local
