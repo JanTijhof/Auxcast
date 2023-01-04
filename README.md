@@ -68,7 +68,13 @@ for example 192.168.1.5:8000
 <h3>Set up casting</h3>
 
 Install Go ([instructions](https://linuxhint.com/2-methods-install-go-raspberry-pi/))
-Then instal Go-chromecast
+````
+sudo apt install golang
+````
+
+Then instal [Go-chromecast](https://github.com/vishen/go-chromecast)
+By downloading a release of choise with "wget *link*" then use "tar -xzf"
+To install, run ````sudo install ./go-chromecast /usr/bin/````
 
 If everything is running wel, plug in your Aux source and test your setup.<br/>
 replace "Muziek" with the Google casting device/group you're targeting and the IP with yours.
