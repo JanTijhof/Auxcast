@@ -99,4 +99,10 @@ sudo chmod +x /etc/init.d/listen-for-cast.sh
 sudo update-rc.d listen-for-cast.sh defaults
 sudo /etc/init.d/listen-for-cast.sh start
 ````
+
+Change the IP adress to the pi in our casting script.
+````
+sudo nano /usr/local/bin/listen-for-cast.py
+````
+
 That should be it! Enjoy your Music! 🎶
