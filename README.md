@@ -82,6 +82,21 @@ When casting is working, install the script for the buttons by running the follo
 ````
 git clone https://github.com/JanTijhof/Auxcast/
 
-./Auxcast/scripts/install
+sudo cp Auxcast/listen-for-shutdown.py /usr/local/bin/
+sudo chmod +x /usr/local/bin/listen-for-shutdown.py
+sudo cp Auxcast/listen-for-cast.py /usr/local/bin/
+sudo chmod +x /usr/local/bin/listen-for-cast.py
+
+sudo cp Auxcast/listen-for-shutdown.sh /etc/init.d/
+sudo chmod +x /etc/init.d/listen-for-shutdown.sh
+
+sudo update-rc.d listen-for-shutdown.sh defaults
+sudo /etc/init.d/listen-for-shutdown.sh start
+
+sudo cp Auxcast/listen-for-cast.sh /etc/init.d/
+sudo chmod +x /etc/init.d/listen-for-cast.sh
+
+sudo update-rc.d listen-for-cast.sh defaults
+sudo /etc/init.d/listen-for-cast.sh start
 ````
 That should be it! Enjoy your Music! 🎶
