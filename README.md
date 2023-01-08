@@ -52,6 +52,11 @@ sleep 5
 sudo nano darkice -c /etc/darkice.cfg&
 ````
 
+The following command makes icecast autostart on reboots.
+````
+systemctl enable icecast
+````
+
 Now to finish our installing process, reboot the system. 
 ````
 sudo reboot
