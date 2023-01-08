@@ -41,15 +41,16 @@ sudo cp Auxcast/darkice.cfg /etc/darkice.cfg
 sudo cp Auxcast/icecast.xml /etc/icecast2/icecast.xml
 ````
 
-Add both to the startup script of your raspberry by opening rc.local
+Darkice is a bitch to autostart. Eventually, this seemed to work.
 ````
-sudo nano /etc/rc.local
+sudo update-rc.d -f darkice remove
 ````
-Add these lines
+
+Then ````Sudo crontab -e````
+And add the following:
+
 ````
-sudo nano icecast2&
-sleep 5
-sudo nano darkice -c /etc/darkice.cfg&
+@reboot sleep 30 && sudo service darkice start
 ````
 
 The following command makes icecast autostart on reboots.
